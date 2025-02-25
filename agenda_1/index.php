@@ -11,6 +11,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- Fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .wrap{
+            white-space:nowrap;
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-primary">
@@ -65,8 +70,8 @@
 
         if ($result->num_rows > 0) {
             // Change Table!
-            echo " <div class='container mt-3'>
-                <table class='table table-hover text-center' border='1'>
+            echo " <div class='container mt-3 table-responsive'>
+                <table class='table table-hover text-center'>
                     <thead class='table-dark'>
                         <tr>
                             <th>ID</th>
@@ -78,11 +83,11 @@
                     <thead>";
             while ($row = $result->fetch_assoc()) {
                 echo "<tr>
-                        <td>{$row['id']}</td>
-                        <td>{$row['nombre']}</td>
-                        <td>{$row['telefono']}</td>
-                        <td>{$row['correo']}</td>
-                        <td>
+                        <td class='wrap'>{$row['id']}</td>
+                        <td class='wrap'>{$row['nombre']}</td>
+                        <td class='wrap'>{$row['telefono']}</td>
+                        <td class='wrap'>{$row['correo']}</td>
+                        <td class='wrap'>
                             <a class='btn btn-primary btn-sm' href='editar.php?id={$row['id']}'>Editar <i class='fa-solid fa-user-pen'></i></a>
                             <a class='btn btn-danger btn-sm' href='borrar.php?id={$row['id']}'>Eliminar <i class='fa-solid fa-user-xmark'></i></a>
                         </td>
