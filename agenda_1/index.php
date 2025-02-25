@@ -80,7 +80,7 @@
                             <th>Email</th>
                             <th>Acciones</th>
                         </tr>
-                    <thead>";
+                    </thead>";
             while ($row = $result->fetch_assoc()) {
                 echo "<tr>
                         <td class='wrap'>{$row['id']}</td>
