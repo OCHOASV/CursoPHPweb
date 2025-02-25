@@ -66,7 +66,7 @@
         if ($result->num_rows > 0) {
             // Change Table!
             echo " <div class='container mt-3'>
-                <table class='table table-hover text-center'>
+                <table class='table table-hover text-center' border='1'>
                     <thead class='table-dark'>
                         <tr>
                             <th>ID</th>
@@ -83,8 +83,8 @@
                         <td>{$row['telefono']}</td>
                         <td>{$row['correo']}</td>
                         <td>
-                            <a href='editar.php?id={$row['id']}'>Editar</a> |
-                            <a href='borrar.php?id={$row['id']}'>Eliminar</a>
+                            <a class='btn btn-primary btn-sm' href='editar.php?id={$row['id']}'>Editar <i class='fa-solid fa-user-pen'></i></a>
+                            <a class='btn btn-danger btn-sm' href='borrar.php?id={$row['id']}'>Eliminar <i class='fa-solid fa-user-xmark'></i></a>
                         </td>
                     </tr>";
             }
