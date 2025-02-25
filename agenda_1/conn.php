@@ -9,5 +9,5 @@
     if ($conn->connect_error) {
         $conn->connect_error;
     }
-    echo 'Conectado a la Base de Datos!';
+    // echo 'Conectado a la Base de Datos!';
 ?>
