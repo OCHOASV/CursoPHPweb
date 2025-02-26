@@ -50,8 +50,9 @@
 
     <div class="container mt-3 col-md-3">
         <h2 class="text-center">Agregar Contacto</h2>
-        <form action="crear.php" method="POST">
+        <form action="procesar.php" method="POST">
             <label class="form-label" for="nombre">Nombre:</label>
+            <input type="hidden" id="accion" name="accion" value="agregar">
             <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" required><br>
             <label for="telefono">Teléfono:</label>
             <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Telefono" required><br>
@@ -90,7 +91,14 @@
                             <td class="wrap"><?php echo $row['correo']; ?></td>
                             <td class="wrap">
                                 <a href="editar.php?id=<?php echo $row['id']; ?>" class="btn btn-sm btn-primary">Editar <i class='fa-solid fa-user-pen'></i></a>
-                                <a href="borrar.php?id=<?php echo $row['id']; ?>" class="btn btn-sm btn-danger">Eliminar <i class='fa-solid fa-user-xmark'></i></a>
+
+                                <form action="procesar.php" method="POST">
+                                    <input type="hidden" id="accion" name="accion" value="borrar">
+                                    <input type="hidden" id="id" name="id" value="<?php echo $row['id']; ?>">
+                                    <button class="btn btn-sm btn-danger">Eliminar <i class='fa-solid fa-user-xmark'></i></button>
+                                </form>
+
+                                <!-- <a href="borrar.php?id=<?php echo $row['id']; ?>" class="btn btn-sm btn-danger">Eliminar <i class='fa-solid fa-user-xmark'></i></a> -->
                             </td>
                         </tr>
     <?php
