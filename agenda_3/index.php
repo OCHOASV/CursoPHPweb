@@ -97,8 +97,6 @@
                                     <input type="hidden" id="id" name="id" value="<?php echo $row['id']; ?>">
                                     <button class="btn btn-sm btn-danger">Eliminar <i class='fa-solid fa-user-xmark'></i></button>
                                 </form>
-
-                                <!-- <a href="borrar.php?id=<?php echo $row['id']; ?>" class="btn btn-sm btn-danger">Eliminar <i class='fa-solid fa-user-xmark'></i></a> -->
                             </td>
                         </tr>
     <?php
