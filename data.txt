@@ -21,75 +21,69 @@ PHP Fiddle => https://onecompiler.com/php
 Entrar en carpeta = nombre_carpeta/$
 Nivel superior = ../$
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.24/sweetalert2.all.js"></script>
-</head>
-<body>
-    <?php
-        /*
-            Tabla a HTML
-            Redirect
-            Procesar
-            Switch
-            Function
-            Alert
-        */
-        if ($_POST) {
-            $accion = $_POST['accion'];
+IsSet Variables
+Counter
+Imagen No Data
+Confirm Alert
+Aling Action Buttons
+Int 9???
 
-            function ejecutar_query($sql){
-                include 'conn.php';
-                if ($conn->query($sql) === TRUE) {
-                    return 'ok';
-                } else {
-                    echo "Error: " . $conn->error;
-                }
-                $conn->close();
-            }
+if (isset($_POST["id"])) {
+    $id = $_POST["id"];
+}
+$id = (isset($_POST["id"])) ? $_POST["id"] : '';
 
-            switch ($accion) {
-                case 'crear':
-                    $nombre = $_POST["nombre"];
-                    $telefono = $_POST["telefono"];
-                    $correo = $_POST["correo"];
-                    $sql = "INSERT INTO contactos (nombre, telefono, correo) VALUES ('$nombre', '$telefono', '$correo')";
-                    if (ejecutar_query($sql) == 'ok') {
+$counter++;
+
+case 'borrar':
+                    $id = $_POST["id"];
     ?>
-                        <script>
-                            Swal.fire({
-                                icon: 'success',
-                                title: 'Listo !!!',
-                                text: '<?php echo $nombre ?> Agregado Exitosamente!'
-                            }).then(function() {
-                                window.location = "index.php";
-                            });
-                        </script>
+                    <script type="text/javascript">
+                        let id = <?php echo $id; ?>;
+                        Swal.fire({
+                            title: "Are you sure?",
+                            text: "You won't be able to revert this!",
+                            icon: "warning",
+                            showCancelButton: true,
+                            confirmButtonColor: "#3085d6",
+                            cancelButtonColor: "#d33",
+                            confirmButtonText: "Yes, delete it!"
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                $.ajax({
+                                    type:"POST",
+                                    url: "del.php",
+                                    data:{
+                                      id:id
+                                    },
+                                    success:function(data){
+                                        Swal.fire({
+                                            icon: 'success',
+                                            title: 'Listo !!!',
+                                            text: 'Usuario Eliminado Exitosamente!'
+                                        }).then(function() {
+                                            window.location = "index.php";
+                                        });
+                                    }
+                                });
+                            }
+                            else{
+                                 window.location = "index.php";
+                            }
+                        });
+                    </script>
     <?php
-                    }
                     break;
 
-                case 'borrar':
-                    $id = $_POST['id'];
-                    $sql = "DELETE FROM contactos WHERE id=$id";
-                    if (ejecutar_query($sql) == 'ok') {
-    ?>
-                        <script>
-                            Swal.fire({
-                                icon: 'success',
-                                title: 'Listo !!!',
-                                text: 'Usuario Eliminado Exitosamente!'
-                            }).then(function() {
-                                window.location = "index.php";
-                            });
-                        </script>
-    <?php
-                    }
-                    break;
-            }
-        }
-    ?>
-</body>
-</html>
+del
+<?php
+    include 'conn.php';
+    $id = $_POST["id"];
+    $sql = "DELETE FROM contactos WHERE id=$id";
+    if ($conn->query($sql) === TRUE) {
+        return true;
+    } else {
+        echo "Error: " . $conn->error;
+    }
+    $conn->close();
+?>
