@@ -26,7 +26,6 @@ Counter
 Imagen No Data
 Confirm Alert
 Aling Action Buttons
-Int 9???
 
 if (isset($_POST["id"])) {
     $id = $_POST["id"];
