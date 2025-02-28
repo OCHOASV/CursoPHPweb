@@ -5,8 +5,8 @@ GuionCase = este-es-mi-guion-case
 PHP Fiddle => https://onecompiler.com/php
 
 - Jerarquía de Estilos
-    - Estilo va de Arriba hacia Abajo
     - Primero Estilo en Linea
+    - Estilo va de Arriba hacia Abajo
     - Segundo Embebido, etiqueta style
     - Tercero Archivo Externo
     - CDN
@@ -21,64 +21,5 @@ PHP Fiddle => https://onecompiler.com/php
 Entrar en carpeta = nombre_carpeta/$
 Nivel superior = ../$
 
-Herramientas de Administrador
-Jerarquía de Estilos
-CONSTANTES
-
-<?php
-    date_default_timezone_set('Europe/Madrid');
-    echo $hora_actual = date('H:i', time());
-    $abre = "10:00";  #diez de la mañana
-    $cierra = "22:00";  #diez de la noche
-
-    if ($abre <= $hora_actual && $cierra >= $hora_actual) {
-        echo "<br><br>Abierto";
-    }
-    else {
-        echo "<br><br>Cerrado";
-    }
-
-    /**********************/
-
-    function operaciones($n1, $n2, $operacion) {
-        $resultado = 0;
-        if($operacion == "S") {
-            $resultado = $n1 + $n2;
-        }
-        else if($operacion == "R") {
-            $resultado = $n1 - $n2;
-        }
-        else if($operacion == "M") {
-            $resultado = $n1 * $n2;
-        }
-        else if($operacion == "D") {
-            $resultado = $n1 / $n2;
-        }
-
-        return $resultado; // *Devolver el resultado
-    }
-
-    // Llamar a la función operaciones
-    $r = operaciones(10, 5, "S");
-    echo $r . "<br>";
-?>
-
-<form action='' method='POST'>
-   Introduce un número:
-   <input type='text' name='numero'>
-   <br>
-   <input type='submit'>
-</form>
-<br>
-<?php
-    if ($_POST) {
-        $n = $_POST["numero"];
-        for ($i = 1; $i <= 10; $i++) {
-            $r = $n*$i;
-            echo $n.' x '.$i.' = '.$r.'<br>';
-        }
-    }
-?>
 
 https://www.freecodecamp.org/espanol/news/los-mejores-ejemplos-de-php/
-

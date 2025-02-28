@@ -28,7 +28,7 @@
 
 			switch ($accion) {
 				case 'agregar':
-				    $sql = "INSERT INTO contactos (nombre, telefono, correo) VALUES ('$nombre', '$telefono', '$correo')";
+				    $sql = "INSERT INTO contactos VALUES ('', '$nombre', '$telefono', '$correo')";
 				    if (ejecutar_query($sql) == 'ok') {
 	?>
 				    	<script>

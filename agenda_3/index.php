@@ -15,6 +15,9 @@
         .wrap{
             white-space: nowrap;
         }
+        .botones{
+            width: 100%;
+        }
     </style>
 </head>
 <body>
@@ -91,7 +94,7 @@
                             <td class="wrap"><?php echo $row['nombre']; ?></td>
                             <td class="wrap"><?php echo $row['telefono']; ?></td>
                             <td class="wrap"><?php echo $row['correo']; ?></td>
-                            <td class="wrap d-inline-flex gap-1">
+                            <td class="wrap d-inline-flex gap-1 botones justify-content-center">
                                 <a href="editar.php?id=<?php echo $row['id']; ?>" class="btn btn-sm btn-primary">Editar <i class='fa-solid fa-user-pen'></i></a>
 
                                 <form action="procesar.php" method="POST">
