@@ -23,6 +23,7 @@ Nivel superior = ../$
 
 Herramientas de Administrador
 Jerarquía de Estilos
+CONSTANTES
 
 <?php
     date_default_timezone_set('Europe/Madrid');
