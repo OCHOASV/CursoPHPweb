@@ -24,8 +24,7 @@ Nivel superior = ../$
 
 https://www.freecodecamp.org/espanol/news/los-mejores-ejemplos-de-php/
 
-https://api.whatsapp.com/send?phone=
+https://api.whatsapp.com/send?phone=+34641832072
 
-theme
 wp-admin
 Plugins
