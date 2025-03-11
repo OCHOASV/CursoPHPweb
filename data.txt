@@ -23,3 +23,7 @@ Nivel superior = ../$
 
 
 https://www.freecodecamp.org/espanol/news/los-mejores-ejemplos-de-php/
+
+theme
+wp-admin
+Plugins
