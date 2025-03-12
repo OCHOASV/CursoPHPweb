@@ -27,5 +27,10 @@ https://www.freecodecamp.org/espanol/news/los-mejores-ejemplos-de-php/
 https://api.whatsapp.com/send?phone=+34641832072
 
 https://romualdfons.com/tutorial-wordpress/
+
+blog nuevo
 wp-admin
+porto
 Plugins
+woocommerce
+snippets
