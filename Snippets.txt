@@ -6,7 +6,7 @@ add_filter( 'rest_authentication_errors', function( $result ) {
     if ( ! is_user_logged_in() ) {
         return new WP_Error( 
         	'notPermision', 
-        	'Largo de aca. By OCHOA', 
+        	'You are not currently logged in. By OCHOA Security',
         	array( 'status' => 401 ) 
         );
     }
@@ -30,3 +30,24 @@ add_action( 'wp_head', function () {
 <?php
 });
 
+/* Disable XMLRPC */
+// In htaccess to
+add_filter( 'xmlrpc_enabled', '__return_false' );
+
+/* Remove Wordpress version */
+remove_action('wp_head', 'wp_generator');
+function remove_generator() {
+     return '';
+ }
+ add_filter('the_generator', 'remove_generator');
+
+ /* Disable Live Preview */
+add_action( 'customize_preview_init', function() {
+    die("No me gusta el Live Preview (¬_¬)");
+}, 1);
+
+/* Stop Heartbeat */
+add_action ('init', 'stop_heartbeat', 1);
+function stop_heartbeat () {
+    wp_deregister_script ('heartbeat');
+}
