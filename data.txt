@@ -28,9 +28,30 @@ https://api.whatsapp.com/send?phone=+34641832072
 
 https://romualdfons.com/tutorial-wordpress/
 
-blog nuevo
-wp-admin
-porto
-Plugins
-woocommerce
-snippets
+Fillezilla
+x10 Hosting
+    https://x10hosting.com/login
+    x10 User:       ochoasv
+    User:           ochoasoftware.sv@gmail.com
+    Pass:           *u(8Asv503)5v-w*
+    http://ochoasv.x10.mx
+    https://x12.x10hosting.com:2222/evo/
+    User:           aqfwaixj
+
+    Host:           localhost
+    DB:             aqfwaixj_wordpress
+    User:           aqfwaixj_wordpress
+    Pass:           H8k74bCEA7jBqasuGx4m
+
+php.ini
+    safe_mode=false;
+    ;  32MB
+    upload_max_filesize=33554432;
+    post_max_size=33554432;
+    ; 64MB
+    ;upload_max_filesize=67108864;
+    ;post_max_size=67108864;
+    memory_limit=512M;
+    max_execution_time=1200;
+    max_input_time=600;
+    max_input_vars=4000;
